@@ -1,0 +1,8 @@
+{
+  "name": "Advik's Pitch & Plane Quiz",
+  "description": "An interactive cricket and commercial aviation quiz celebrating Advik's 12th year in 2026, featuring custom trivia, mini-games, and a live leaderboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

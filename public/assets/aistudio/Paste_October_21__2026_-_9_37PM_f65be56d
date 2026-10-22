@@ -1,0 +1,657 @@
+# ADVIK'S PITCH & PLANE QUIZ
+## Complete Developer Specification for Firebase
+
+**Project type:** Personalised, interactive web game  
+**Theme:** Cricket + Commercial Aviation + Advik's personality  
+**Occasion:** Advik's 12th year in 2026  
+**Platform:** Firebase Hosting + Cloud Firestore  
+**Primary objective:** Build a fun, replayable quiz where family, friends and other players guess what Advik likes, earn points, unlock badges and enjoy aviation- and cricket-themed mini-games.
+
+---
+
+# 1. Core concept
+
+Create a polished website called **Advik's Pitch & Plane Quiz**.
+
+The game should combine two worlds:
+
+- **Cricket:** Indian cricket, Sachin Tendulkar, Rohit Sharma, Virat Kohli, Mumbai Indians, pull shots, World Cup moments and funny match-day habits.
+- **Commercial aviation:** Airbus A380, Boeing 787, Korean Air, Air India, airports, plane spotting, first-class suites and dream travel.
+
+The central question throughout the experience is:
+
+**"How well do you really know Advik?"**
+
+Players should be able to open the website from a shared link, enter a nickname and start immediately without creating an account.
+
+Each round contains exactly five main questions selected from a large question repository. A different combination should appear on subsequent plays, subject to the available question pool.
+
+The game must feel like a real interactive experience, not a static quiz page.
+
+# 2. Mandatory technical requirements
+
+Use:
+
+- HTML, CSS and JavaScript.
+- Firebase Hosting.
+- Cloud Firestore for the question repository and shared leaderboard.
+- Appropriate Firebase authentication and security rules for administration.
+- A secured backend, such as Cloud Functions, if tamper-resistant score validation is implemented.
+- Canvas or another suitable browser technique for generating downloadable boarding passes and player cards.
+
+Keep the code maintainable and separate the interface, game logic, question data, Firebase services and admin functionality into suitable modules.
+
+Deliver the complete source code and deployment instructions. Do not stop after creating a visual prototype with only five hard-coded questions.
+
+Provide a bundled starter question bank so the core game remains playable during a Firebase connection failure. Clearly distinguish locally saved results from scores successfully submitted to the shared leaderboard.
+
+# 3. Advik's verified personal profile
+
+Use these facts to create accurate, personalised questions.
+
+## Cricket
+
+- Favourite cricketer of all time: Sachin Tendulkar.
+- Favourite current Indian cricketer: Rohit Sharma.
+- Favourite teams: India and Mumbai Indians.
+- Favourite Mumbai Indians player: Rohit Sharma.
+- Favourite player pairing: RO-KO (Rohit Sharma and Virat Kohli).
+- Favourite format: Test cricket.
+- Plays as an opening batsman.
+- Favourite shot: Pull shot for six.
+- He pulls or hooks short-pitched deliveries while batting.
+- Memorable tournament: The 1983 World Cup.
+- Memorable moment: Suryakumar Yadav's long-off catch in the 2024 Men's T20 World Cup final.
+- If someone drops a catch, Advik shouts.
+- When a match becomes tense or very close, he sometimes switches off the TV.
+
+## Commercial aviation
+
+- Favourite aircraft: Airbus A380.
+- Favourite thing about the A380: Its looks.
+- Another favourite aircraft: Boeing 787.
+- Favourite airline: Korean Air.
+- Another favourite airline: Air India.
+- He can distinguish Airbus and Boeing aircraft by their appearance.
+- His favourite part of the flying experience is the airport.
+- Favourite aviation YouTube channels: Layover Aviation and Melbourne Aviation.
+- Dream aircraft experience: An A380 first-class suite.
+- Dream destination: Switzerland.
+- Dream Dubai activity: Visiting the Burj Khalifa.
+- Plane spotting videos are one of his favourite things to watch.
+- Do not label the Korean Air BTS livery his absolute favourite. His favourite special livery has not been established.
+
+## Food and other interests
+
+- Favourite meal: Chicken penne pasta in white sauce.
+- Favourite dessert: Choco Lava Cake from Domino's.
+- Favourite bread: A normal, soft and spongy bun with butter.
+- Favourite drink: Sprite.
+- Other hobby: Playing chess.
+- Imaginary airline name: Gudda Airlines.
+- Superpower choice: Hitting a 120-metre six every time.
+- A dream combination: Watching the World Cup on television while travelling in an A380 first-class suite.
+
+Do not invent additional personal preferences. General cricket and aviation knowledge questions may be added after factual verification.
+
+# 4. Question repository — minimum 80 unique questions
+
+This is one of the most important requirements.
+
+Create at least **80 complete, usable questions before launch**, not just 80 placeholders.
+
+| Category | Initial minimum |
+|---|---:|
+| Cricket and cricket preferences | 20 |
+| Commercial aviation and aircraft | 20 |
+| Advik's personal likes, food and habits | 20 |
+| Cricket + aviation combinations and funny scenarios | 20 |
+| **Total** | **80** |
+
+Design the data structure to support at least 150–200 questions later without requiring changes to the core game engine.
+
+## Question formats
+
+Include the following:
+
+1. Personal preference guessing.
+2. Four-option multiple-choice questions.
+3. Factual cricket trivia.
+4. Commercial aviation trivia.
+5. True/False questions.
+6. Funny hypothetical situations involving Advik.
+
+A round should mix personal questions with factual trivia. The player's goal is both to know Advik and to enjoy cricket and aviation facts.
+
+## Required original sample question ideas
+
+These ideas from the original brief must be represented in the bank, with the wording adapted where needed:
+
+**Cricket sample:** If Advik were batting in the IPL and needed a six, which shot would he especially love to hit?
+
+Suggested options: Pull Shot, Helicopter Shot, Reverse Sweep, Cover Drive.
+
+Correct personalised answer: Pull Shot.
+
+**Aircraft sample:** Which aircraft would Advik most want to experience in a dream first-class journey?
+
+Suggested options: Airbus A380, Boeing 747, Boeing 787, Concorde.
+
+Correct personalised answer: Airbus A380.
+
+**Gudda Airlines sample:** What name would Advik give his imaginary airline?
+
+Correct answer: Gudda Airlines.
+
+**Favourite cricketer sample:** Who is Advik's favourite cricketer of all time?
+
+Correct answer: Sachin Tendulkar.
+
+A separate question can ask for his favourite current Indian cricketer, with Rohit Sharma as the answer.
+
+**Hobby sample:** When Advik isn't watching cricket or plane spotting, which activity does he enjoy?
+
+Correct answer: Chess.
+
+Include further questions about the 1983 World Cup, Test cricket, RO-KO, the 2024 SKY catch, airports, the Boeing 787, Korean Air, Air India, Dubai, Switzerland, pasta, chocolate cake, Sprite and his funny match-day habits.
+
+## Required data fields
+
+Each question must contain:
+
+- Unique ID.
+- Question text.
+- Category.
+- Question type.
+- Difficulty.
+- Answer options, where applicable.
+- Correct answer.
+- Short explanation.
+- Enabled/disabled status.
+- Relevant tags.
+- Source or verification note for factual trivia.
+
+Each question must have exactly one correct answer for ordinary single-answer questions. True/False questions must have an unambiguous answer.
+
+Personal questions must be consistent with Advik's supplied profile. Factual questions must be checked against reliable sources before release.
+
+# 5. Random question engine
+
+Whenever a player begins a new round:
+
+1. Load the currently enabled questions.
+2. Select five suitable questions.
+3. Avoid repeats inside the same round.
+4. Prefer questions that the same browser has not seen in recent games.
+5. Randomise question order.
+6. Shuffle answer choices when appropriate.
+7. Preserve correct-answer mapping after shuffling.
+
+Use a rolling recent-question history. A reasonable target is to avoid the last 20 questions played on the same browser when enough eligible questions exist.
+
+If the repository has fewer eligible questions than required, relax the recent-history restriction gradually rather than preventing a game from starting.
+
+Aim for each round to include at least one cricket question, one aviation question and one personalised Advik question. Vary the remaining selection so every round doesn't follow the same pattern.
+
+Do not secretly reuse one fixed group of five questions. Do not repeat a question within one round.
+
+# 6. Website screens and navigation
+
+## A. Welcome screen
+
+Display:
+
+- Advik's Pitch & Plane Quiz title.
+- A celebratory 12th-year design for 2026.
+- An aircraft and cricket-themed visual identity.
+- A nickname input.
+- Start Game button.
+- Sound control.
+- Sky Mode / Stadium Mode toggle.
+- Leaderboard link.
+
+The welcome page should feel premium, cheerful and playful.
+
+## B. Quiz screen
+
+Display:
+
+- Question number out of five.
+- Question category.
+- Difficulty level.
+- Question and answer choices.
+- Progress indicator.
+- Optional timer for configured question types.
+- Lifeline controls where applicable.
+- Correct or incorrect feedback.
+- A concise fact or explanation after the answer.
+
+Prevent users from answering the same question multiple times to increase their score.
+
+## C. Bonus-round screen
+
+After the five main questions, offer the Mystery Baggage game.
+
+## D. Results screen
+
+Show the player's correct answers out of five, main score, bonus points, badge and time taken where relevant. Include replay, leaderboard, share and downloadable pass controls.
+
+## E. Collectible and mini-game screens
+
+Include the approved optional activities described below, accessible through clear links or a bonus-games menu. The five-question core quiz must remain quick to start and finish.
+
+# 7. Sound system — required feature
+
+**The website must have working sound effects. Audio is not optional and must not be left as a future enhancement.**
+
+Create a central sound manager so the effects have consistent volume and can be switched on or off.
+
+Include the following sound events:
+
+| Event | Required sound |
+|---|---|
+| Player starts the game | Aircraft/airport-inspired startup effect or boarding chime |
+| Game transition | Subtle aviation transition sound |
+| Correct answer | Bat hitting a cricket ball |
+| Incorrect answer | Short, gentle buzzer |
+| Three consecutive correct answers | Brief celebratory crowd response |
+| Mystery Baggage selection | Bag-opening or reveal sound |
+| Perfect 5/5 | Crowd applause or stadium cheer |
+| Aircraft identification success | Subtle aviation confirmation sound |
+| Boarding-pass generation | Boarding chime |
+| Button interaction | Quiet interface click, where appropriate |
+
+Use the Web Audio API for suitable synthesised effects and properly licensed local sound assets for more realistic sounds such as engines and crowd reactions.
+
+Do not use unlicensed commercial recordings.
+
+## Sound behaviour
+
+- Display a clearly visible sound on/off control.
+- Audio should be enabled through an initial user interaction, respecting browser autoplay restrictions.
+- The player must be able to mute the game at any time.
+- Remember the preference locally for future visits.
+- Do not allow sounds to overlap excessively.
+- Keep interface sounds short and comfortable in volume.
+- The game must continue to work when audio files fail to load or audio is blocked by the browser.
+- Correct and incorrect answers must still have visible feedback even when muted.
+
+The developer must physically test the sounds in the deployed browser version. Showing a speaker icon without working playback does not fulfil this requirement.
+
+# 8. Sky Mode and Stadium Mode
+
+Provide two coordinated visual themes.
+
+### Sky Mode
+
+- Blue and white colour palette.
+- Cloud and aircraft motifs.
+- Airport signage and boarding-inspired UI details.
+- Subtle aircraft flyover animations.
+- Aviation-style transitions.
+
+### Stadium Mode
+
+- Turf green and white colour palette.
+- Scoreboard details.
+- Stadium-light ambience.
+- Cricket-inspired progress indicators.
+- Subtle crowd and celebration animations.
+
+The themes should feel like two sides of the same game. Both must remain readable on mobile screens.
+
+# 9. Scoring, badges and achievements
+
+## Main score
+
+Award one base point per correct answer. The main quiz score is always out of five.
+
+Use these badges:
+
+| Main score | Badge |
+|---|---|
+| 0–2 | Grounded Spectator |
+| 3–4 | First Officer of the Pitch |
+| 5/5 | Captain of the Century |
+
+Display main quiz points separately from bonus and time points.
+
+## Streak and combo meter
+
+Award visual celebrations for consecutive correct answers.
+
+Examples:
+- Two correct answers: “Building Momentum!”
+- Three correct answers: “Hat-trick!”
+- Five correct answers: “Perfect Flight & Perfect Innings!”
+
+These effects should reward the player without interrupting gameplay.
+
+## Lifelines
+
+Include three named lifelines:
+
+- **Third Umpire:** Remove two incorrect options.
+- **Air Traffic Control:** Reveal a hint about the answer.
+- **Powerplay:** Double the points from one eligible question.
+
+Limit usage and ensure the same lifeline cannot be exploited repeatedly.
+
+Maintain the five-question base score separately. Any score beyond five should be clearly labelled bonus points rather than altering the accuracy figure.
+
+## Time bonus
+
+For questions where a timer is enabled, faster correct answers may earn modest bonus points. Keep this separate from the main 5-point score, and define the scoring rule clearly.
+
+Do not make the timer so aggressive that casual players cannot enjoy the game.
+
+## Achievements
+
+Include:
+- Perfect 5/5.
+- Three-question streak.
+- Full cricket-round achievement.
+- Full aviation-round achievement.
+- Lucky Mystery Baggage.
+- Plane Spotter.
+- Gudda Airlines Captain.
+- TV Off Survivor, inspired by Advik switching off the television during tense matches.
+
+# 10. Mystery Baggage bonus game
+
+Name: **Advik's Mystery Baggage**.
+
+Display three selectable objects, such as:
+- Aviation suitcase.
+- Cricket kit bag.
+- Mystery bag.
+
+Each selection produces a random configured outcome:
+- A small bonus score.
+- A larger bonus score.
+- A funny fact about Advik.
+- A humorous message or surprise.
+- A no-bonus outcome.
+
+Keep prizes bounded and avoid awarding the maximum reward every time.
+
+Do not allow repeated clicking to generate unlimited prizes. Record that the bonus round has already been completed for that game session.
+
+# 11. Additional mini-games and personal experiences
+
+These ideas from the original plan must not be forgotten. They can be implemented after the core quiz is stable, but they remain part of the intended product scope.
+
+## A. Spot the Catch
+
+Create a small timing-based cricket game inspired by Suryakumar Yadav's famous long-off catch in the 2024 Men's T20 World Cup final.
+
+A ball travels towards the boundary. The player taps at the right time to complete the catch.
+
+Use a short animation and sound effect, and award a bounded bonus score for success.
+
+This should be a fun reaction game rather than a complicated cricket simulator.
+
+## B. Plane Spotter
+
+Present a clean aircraft silhouette or illustration and ask the player to identify the aircraft.
+
+Start with aircraft relevant to Advik, including:
+- Airbus A380.
+- Boeing 787.
+- Boeing 747.
+- Airbus A350 or another suitable aircraft.
+
+Use aircraft graphics that are appropriately licensed. Provide the correct answer, a brief explanation and a small aviation sound effect.
+
+Do not make the core game dependent on downloading external images at runtime.
+
+## C. Build Your Gudda Airlines
+
+Let players create a fictional airline card by selecting:
+
+- Airline name, with Gudda Airlines as the default.
+- Aircraft type, particularly the A380 and Boeing 787.
+- A livery colour scheme.
+- A destination, such as Dubai or Switzerland.
+- An in-flight meal, including chicken penne pasta, chocolate cake and bun with butter.
+
+Generate an airline card with the player's selections.
+
+The card should be downloadable and shareable. Treat the airline as a fictional game creation, not a real airline.
+
+## D. Advik Trading Card
+
+Generate an illustrated, personalised cricket-and-aviation trading card.
+
+Possible playful statistics:
+- Pull Shot: 99.
+- Aircraft Knowledge: 100.
+- Pasta Appetite: 100.
+- Airport Excitement: 100.
+
+These are fictional humour-based game stats, not measured real-world abilities.
+
+Use a bold sports trading-card style inspired by cricket collectibles. Do not copy official team logos, card artwork or trademarked designs without permission.
+
+## E. The Lucky Sofa gag
+
+Include a small Easter egg or achievement based on Advik's habit of switching off the television when a cricket match becomes too tense.
+
+Possible badge: “TV Off Survivor”.
+
+Keep it light-hearted and affectionate.
+
+## F. Easter eggs
+
+Add small surprises for special interactions. Examples include:
+- Typing “SKY” in a designated search or Easter-egg input triggers a cricket celebration.
+- Entering “A380” triggers an aircraft flyover.
+- A perfect round triggers an exclusive animation and sound.
+
+Do not trigger special keyboard sequences while users are entering their nickname or typing in other form fields. These Easter eggs should never interfere with normal navigation or score integrity.
+
+# 12. Downloadable boarding pass / match ticket
+
+Generate a personalised digital result card after the quiz.
+
+Include:
+- Advik's Pitch & Plane Quiz branding.
+- Player's nickname.
+- Main score out of five.
+- Bonus score.
+- Badge.
+- Fictional airline: Gudda Airlines.
+- Fictional flight number or cricket match-pass identifier.
+- A seat such as 12A.
+- A suitable mixture of aircraft and cricket imagery.
+
+Make the ticket downloadable as a high-quality image.
+
+Also provide a separate share button with a ready-made message, such as:
+
+“I scored 4/5 in Advik's Pitch & Plane Quiz. Can you beat me?”
+
+Where supported, open WhatsApp sharing with the text and website link. Keep the generated URL valid and use the live site address after deployment.
+
+An optional short dedication may be printed on the individual's own ticket. Do not create a public Wall of Wishes or a public collection of messages.
+
+# 13. Leaderboard and Firebase integration
+
+Use Cloud Firestore for the shared leaderboard.
+
+A score record should contain:
+- Record ID.
+- Game/session ID.
+- Player nickname.
+- Correct answers out of five.
+- Main score.
+- Bonus points.
+- Total points, if used for ranking.
+- Badge.
+- Duration where applicable.
+- Submission timestamp.
+
+Display rank, nickname and score in a clear table or compact list.
+
+Sort scores consistently, using a documented tie-breaking rule. For example, total points first, correct answers second, and completion time third.
+
+Provide a leaderboard that works across different devices. Do not represent device-only local scores as shared online results.
+
+## Privacy and abuse prevention
+
+- Do not require a player to provide their real name.
+- Set a sensible nickname character limit.
+- Reject empty or malformed submissions.
+- Prevent duplicate accidental submissions from the same game session.
+- Do not expose unnecessary personal information.
+- Apply sensible rate limits or abuse controls.
+
+If scores are calculated entirely in JavaScript, explain that a determined player could manipulate them. Use a secured backend to validate answers and calculate authoritative scores if leaderboard integrity is required.
+
+Never deploy Firestore with unrestricted public writes.
+
+# 14. Admin dashboard and question management
+
+Provide a restricted admin page for the website owner.
+
+The admin should be able to:
+
+- View the complete question repository.
+- Add questions.
+- Edit questions.
+- Enable or disable questions.
+- Edit options, answers and explanations.
+- Set categories and difficulty.
+- Preview questions.
+- See the number of active questions.
+- Review leaderboard entries.
+- Remove abusive nicknames or invalid entries.
+- Reset score data only after confirmation.
+- Check basic game statistics.
+
+Use proper authentication and restrictive Firestore rules. A hidden URL or client-side PIN alone is not sufficient protection for privileged database operations.
+
+Adding a question should not require modifying the game engine or redeploying the entire website whenever a new question is added to Firestore.
+
+# 15. Birthday and celebratory styling
+
+Include the celebratory style of Advik's 12th year in 2026.
+
+Suitable details include:
+- A “12” motif in the welcome screen.
+- Subtle birthday-style accents.
+- Confetti on a perfect score.
+- A special Captain of the Century celebration.
+- A celebratory boarding pass design.
+
+Do not implement a birthday countdown.
+
+# 16. Features explicitly excluded
+
+Do not implement:
+
+- Daily Challenge.
+- Birthday countdown.
+- Public Wall of Wishes, including a shared page where people post messages for Advik to read or like.
+
+Keep all other approved game features in scope, subject to the implementation priorities below.
+
+# 17. Interface, accessibility and performance
+
+The website must:
+
+- Work on mobile, tablet and desktop.
+- Use large touch-friendly buttons.
+- Load quickly on a normal mobile connection.
+- Have a visible loading state.
+- Handle missing or unavailable Firebase data gracefully.
+- Include accessible colour contrast and readable text.
+- Support reduced-motion preferences where feasible.
+- Allow audio to be disabled.
+- Avoid excessive animation or overlapping sounds.
+- Avoid broken images, blank screens and misleading success messages.
+
+The app should not depend on copyrighted or externally hosted images for basic functionality.
+
+# 18. Testing requirements
+
+Before release, verify the following.
+
+### Question engine
+- At least 80 unique questions are present and usable.
+- Each question has a valid answer.
+- Shuffling does not break answer evaluation.
+- No question repeats within a round.
+- Subsequent rounds vary when enough questions are available.
+- Personalised answers match Advik's verified profile.
+- Factual answers have been checked.
+
+### Sound
+- Every required sound event plays at the correct moment.
+- The sound toggle works.
+- Audio starts correctly after player interaction.
+- Muting suppresses all game audio.
+- Missing or blocked audio never breaks the game.
+
+### Scoring and mini-games
+- Main score remains out of five.
+- Bonus and time scores remain distinguishable.
+- Lifelines cannot be exploited.
+- Mystery Baggage pays out only once per round.
+- Spot the Catch works on touch screens.
+- Plane Spotter displays the correct aircraft answer.
+- Generated airline and player cards reflect actual selections.
+
+### Firebase and security
+- Leaderboard records persist across devices.
+- Questions load successfully.
+- Unauthorised players cannot edit questions.
+- Firestore rules prevent unrestricted writes and deletes.
+- Duplicate submissions are handled.
+- Offline/local fallback is labelled accurately.
+
+### Results and sharing
+- The boarding pass contains the correct nickname and score.
+- Downloads are legible.
+- WhatsApp sharing produces a sensible message and valid link.
+- Replay starts a new question-selection cycle.
+
+### Final deployment
+- Test the actual deployed Firebase website on desktop and mobile browsers.
+- Confirm there are no blocking JavaScript errors.
+- Verify sound playback on the deployed site, not only in a developer preview.
+
+# 19. Delivery plan
+
+Implement the project in this order:
+
+**Milestone 1 — Core game:** Welcome screen, nickname entry, question repository, five-question random engine, scoring and badges.
+
+**Milestone 2 — Mandatory sound and visual design:** Sound manager, correct/incorrect effects, celebrations, Sky Mode and Stadium Mode.
+
+**Milestone 3 — Firebase:** Firestore questions, shared leaderboard, security rules and reliable fallback behaviour.
+
+**Milestone 4 — Bonus round and results:** Mystery Baggage, downloadable boarding pass and sharing.
+
+**Milestone 5 — Additional activities:** Spot the Catch, Plane Spotter, Gudda Airlines builder, Advik trading card, achievements and Easter eggs.
+
+**Milestone 6 — Admin and quality assurance:** Question management, security verification, responsive testing and final Firebase deployment.
+
+The milestones are a development sequence, not permission to silently remove approved features. The final scope should include the complete set above, with any unfinished features clearly identified rather than described as complete.
+
+# 20. Definition of done
+
+The website is complete only when:
+
+1. A player can start immediately using a nickname.
+2. Five fresh questions are selected from the question bank.
+3. Correct and incorrect answers generate working sound effects.
+4. Score, badges, bonus points and results are calculated correctly.
+5. The Mystery Baggage bonus round works.
+6. The boarding pass can be downloaded and shared.
+7. The Firebase leaderboard records scores across devices.
+8. The owner can maintain and expand the question bank securely.
+9. The additional mini-games, collectibles, achievements and Easter eggs are implemented and tested.
+10. The deployed site works on mobile and desktop.
+
+**Prioritise reliability, real sound playback, question variety and Advik-specific content. A beautiful interface is not enough if the questions repeat, the sounds do not play or the scores fail to save.**

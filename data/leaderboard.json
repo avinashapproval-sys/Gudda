@@ -1,0 +1,62 @@
+[
+  {
+    "id": "init_1",
+    "gameSessionId": "sess_init1",
+    "nickname": "Hitman_PullShot",
+    "correctAnswers": 5,
+    "mainScore": 5,
+    "bonusPoints": 350,
+    "totalPoints": 850,
+    "badge": "Captain of the Century",
+    "durationSeconds": 28,
+    "timestamp": 1792513448185
+  },
+  {
+    "id": "init_2",
+    "gameSessionId": "sess_init2",
+    "nickname": "A380_Spotter",
+    "correctAnswers": 5,
+    "mainScore": 5,
+    "bonusPoints": 280,
+    "totalPoints": 780,
+    "badge": "Captain of the Century",
+    "durationSeconds": 34,
+    "timestamp": 1792556648185
+  },
+  {
+    "id": "init_3",
+    "gameSessionId": "sess_init3",
+    "nickname": "SwissAlps_Flyer",
+    "correctAnswers": 4,
+    "mainScore": 4,
+    "bonusPoints": 210,
+    "totalPoints": 610,
+    "badge": "First Officer of the Pitch",
+    "durationSeconds": 42,
+    "timestamp": 1792578248185
+  },
+  {
+    "id": "init_4",
+    "gameSessionId": "sess_init4",
+    "nickname": "WhiteSaucePenne",
+    "correctAnswers": 4,
+    "mainScore": 4,
+    "bonusPoints": 180,
+    "totalPoints": 580,
+    "badge": "First Officer of the Pitch",
+    "durationSeconds": 39,
+    "timestamp": 1792592648185
+  },
+  {
+    "id": "score_1792600191860_u3zs0",
+    "gameSessionId": "sess_1792599913842_5z9c",
+    "nickname": "Hitman12",
+    "correctAnswers": 5,
+    "mainScore": 5,
+    "bonusPoints": 630,
+    "totalPoints": 1130,
+    "badge": "Captain of the Century",
+    "durationSeconds": 151,
+    "timestamp": 1792600191860
+  }
+]
